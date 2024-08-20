@@ -1,11 +1,10 @@
 import './ListaSuspensa.css';
 
 interface ListaSuspensaProps {
-  label: string;
-  required: boolean;
-  valor: string;
-  props: string;
   aoAlterado: (valor: string) => void;
+  label: string;
+  obrigatorio: boolean;
+  valor: string;
   itens: string[];
 }
 
@@ -15,7 +14,7 @@ const ListaSuspensa = (props: ListaSuspensaProps) => {
       <label>{props.label}</label>
       <select
         onChange={(evento) => props.aoAlterado(evento.target.value)}
-        required={props.required}
+        required={props.obrigatorio}
         value={props.valor}
       >
         <option value=''></option>
